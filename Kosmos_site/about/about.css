@@ -1,0 +1,259 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', serif; /* como a home usa Times New Roman */
+}
+
+/* Fundo com efeito de espaço */
+body {
+  background: linear-gradient(135deg, #f9f0d8 0%, #d6c9a2 100%); /* cores da home */
+  color: #222;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  color: #4d4d4d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  position: relative;
+  box-shadow: none;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #6a5acd; 
+}
+
+.hero {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  background: linear-gradient(135deg, #ad9af8, #d1c6ff); /* gradiente roxo suave da home */
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  box-shadow: 0 8px 15px rgba(101, 87, 187, 0.3);
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-size: 60px;
+  margin-bottom: 15px;
+  text-shadow: 0 4px 10px rgba(33, 37, 45, 0.4);
+}
+
+.hero p {
+  font-size: 24px;
+  font-weight: 400;
+  color: #eee;
+}
+
+.content {
+  margin: 0 auto 80px;
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+  padding: 40px 20px;
+  background: #f9f0d8; 
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(33, 37, 45, 0.15);
+  font-family: 'Arial', sans-serif;
+  color: #444;
+}
+
+.content h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #7c7895;
+}
+
+.content p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.footer {
+  background: rgba(255, 255, 255, 0.7); /* tom escuro translúcido */
+  backdrop-filter: blur(8px);
+  padding: 40px 20px;
+  color: #482757;
+  font-family: 'Nunito', sans-serif;
+  max-width: 1200px;
+  margin: 80px auto 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(180, 154, 248, 0.3);
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-brand {
+  max-width: 300px;
+}
+
+.footer-brand h1 {
+  font-size: 28px;
+  color: #b49af8;
+  font-weight: 900;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #a692ff;
+}
+
+.footer-brand p {
+  color: #bbb;
+  line-height: 1.4;
+}
+
+.footer-sections {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  flex: 1;
+  justify-content: space-around;
+}
+
+.footer-section {
+  min-width: 180px;
+}
+
+.footer-section h3 {
+  color: #b49af8;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-shadow: 0 0 8px #9579e7;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.footer-section ul li a:hover {
+  color: #b49af8;
+  text-shadow: 0 0 6px #b49af8;
+}
+
+.footer-section p {
+  color: #ccc;
+  font-weight: 500;
+  margin: 8px 0;
+}
+
+hr.footer-separator {
+  border: none;
+  border-top: 1px solid rgba(180, 154, 248, 0.3);
+  margin: 40px 0 30px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 15px;
+  color: #999;
+  letter-spacing: 1px;
+  font-weight: 400;
+  user-select: none;
+}
+
+/* Ícones sociais (se quiser incluir, adaptar cores) */
+.footer-social {
+  margin-top: 15px;
+}
+
+.footer-social a {
+  color: #b49af8;
+  margin: 0 10px;
+  font-size: 22px;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.footer-social a:hover {
+  color: #9579e7;
+  text-shadow: 0 0 8px #9579e7;
+}
+
+/* Responsividade simples */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-sections {
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+  }
+
+  .footer-section {
+    min-width: auto;
+    text-align: center;
+  }
+
+  .footer-brand {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+
+
+/* Efeito stars do home não precisa */
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 45px;
+  }
+  .hero p {
+    font-size: 18px;
+  }
+  .content h2 {
+    font-size: 28px;
+  }
+  .content p {
+    font-size: 16px;
+  }
+}
