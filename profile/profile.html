@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil - Kosmos</title>
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+  <a href="../register/register.html" class="register-btn" title="Registrar Nova Arte">
+  <img src="../register/pincel.webp" alt="Registrar Nova Arte" />
+</a>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <a href="../main/main.html">Kosmos</a> 
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../main/main.html">Início</a></li>
+        <li><a href="profile.html" class="active">Perfil</a></li>
+        <li><a href="../marketplace/marketplace.html">Compra & Venda</a></li>
+        <li><a href="../logout/logout.html">Sair</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- Perfil -->
+    <section class="profile-section">
+      <h2>Meu Perfil</h2>
+      <div class="profile-card">
+        <img src="../main/mainImages/pfp.jpg" alt="Foto do usuário" class="profile-photo" />
+        <div class="profile-info">
+          <h3>Felipe Aligheri</h3>
+          <p>Artista digital e ilustrador. Especialista em ilustrações conceituais, retratos e arte digital para jogos e livros.</p>
+          <h4>Portfólio</h4>
+          <div class="portfolio-carousel">
+            <div class="portfolio-item"><img src="../main/mainImages/portifolio1.jpeg" alt="Arte 1" class="portfolio-img"></div>
+            <div class="portfolio-item"><img src="../main/mainImages/portifolio2.jpeg" alt="Arte 2" class="portfolio-img"></div>
+            <div class="portfolio-item"><img src="../main/mainImages/portifolio3.jpeg" alt="Arte 3" class="portfolio-img"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Saiba Mais Sobre Mim -->
+    <section class="about-me">
+      <h2>Saiba Mais Sobre Mim</h2>
+      <div class="about-me-content">
+        <h3>Sobre o Felipe Aligheri</h3>
+        <p>Olá! Sou Felipe Aligheri, um artista digital apaixonado por criar ilustrações únicas e personagens memoráveis. Minha carreira começou ainda jovem, com o desejo de contar histórias visualmente. Ao longo dos anos, fui me especializando em várias técnicas de arte digital, sempre buscando expressar emoções e dar vida a projetos incríveis.</p>
+
+        <h4>Meu Processo Criativo</h4>
+        <p>Eu começo meu processo criativo com muita pesquisa, explorando referências, conceitos e o tipo de estilo que mais combina com o projeto. Cada arte que crio é única, seja para um cliente ou para um projeto pessoal, e sempre busco transmitir um sentimento ou uma história por meio de detalhes e texturas.</p>
+
+        <h4>O que me inspira</h4>
+        <p>A natureza, filmes de fantasia, jogos de videogame e até mesmo a vida cotidiana são grandes fontes de inspiração para mim. A cada nova obra, tento trazer algo de novo, buscando sempre inovar e melhorar minhas habilidades artísticas.</p>
+
+        <h4>O que eu faço e o que não faço</h4>
+        <div class="work-sections">
+          <div>
+            <h5>O que eu faço:</h5>
+            <ul>
+              <li>Ilustração digital de personagens</li>
+              <li>Arte para jogos e animações</li>
+              <li>Arte conceitual e ambientação</li>
+            </ul>
+          </div>
+          <div>
+            <h5>O que eu não faço:</h5>
+            <ul>
+              <li>Ilustração em mídias tradicionais (pintura a óleo, etc.)</li>
+              <li>Modelagem 3D</li>
+              <li>Fotografia</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detalhes do usuário -->
+    <section class="user-details">
+      <h2>Detalhes</h2>
+      <div class="details-grid">
+        <p><strong>Email:</strong> felipe.aligheri@email.com</p>
+        <p><strong>Seguindo:</strong> 200 artistas</p>
+        <p><strong>Vendas:</strong> 15 itens</p>
+        <p><strong>Avaliação:</strong> ★★★★☆</p>
+      </div>
+    </section>
+
+    <!-- Vendas do usuário -->
+    <section class="user-sales">
+      <h2>Meus Itens à Venda</h2>
+      <div class="sales-grid">
+        <div class="item-card">
+          <img src="../profile/imagesProfile/arte1.jpeg" alt="Item 1">
+          <h3>Ilustração Conceitual</h3>
+          <p>Arte digital de personagem original.</p>
+          <span class="price">R$ 120,00</span>
+        </div>
+        <div class="item-card">
+          <img src="../profile/imagesProfile/arte2.jpeg" alt="Item 2">
+          <h3>Arte Fantasy</h3>
+          <p>Ilustração de cenário fantástico.</p>
+          <span class="price">R$ 150,00</span>
+        </div>
+        <div class="item-card">
+          <img src="../profile/imagesProfile/arte3.jpeg" alt="Item 3">
+          <h3>Retrato Digital</h3>
+          <p>Retrato estilizado em digital painting.</p>
+          <span class="price">R$ 90,00</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews / Testemunhos -->
+    <section class="user-reviews">
+      <h2>Avaliações</h2>
+      <div class="reviews-carousel">
+        <div class="review-item">
+          <p>"O trabalho do Felipe é incrível! Recomendo a todos."</p>
+          <h4>— Ana Costa</h4>
+        </div>
+        <div class="review-item">
+          <p>"Entrega rápida e qualidade impecável."</p>
+          <h4>— Carlos Mendes</h4>
+        </div>
+        <div class="review-item">
+          <p>"Arte com muito detalhe e criatividade."</p>
+          <h4>— Júlia Rocha</h4>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Kosmos - Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Pop-up -->
+  <div id="popup" class="popup-overlay">
+    <div class="popup-content">
+      <span class="close-btn">&times;</span>
+      <img id="popup-img" src="" alt="Imagem do portfólio" />
+      <div class="popup-text">
+        <h3 id="popup-title"></h3>
+        <p id="popup-description"></p>
+        <p><strong>Valor:</strong> <span id="popup-value"></span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script para carrossel simples -->
+  <script>
+    const portfolioImages = document.querySelectorAll('.portfolio-item img');
+    const popupOverlay = document.getElementById('popup');
+    const closeBtn = document.querySelector('.close-btn');
+
+    portfolioImages.forEach(image => {
+      image.addEventListener('click', () => {
+        const src = image.src;
+        const alt = image.alt;
+
+        popupOverlay.style.display = 'flex';
+        document.getElementById('popup-img').src = src;
+        document.getElementById('popup-title').textContent = alt;
+        document.getElementById('popup-description').textContent = `Descrição sobre a arte: ${alt}`;
+        document.getElementById('popup-value').textContent = "R$ 300,00"; // Modificar conforme necessário
+      });
+    });
+
+    // Fechar o pop-up
+    closeBtn.addEventListener('click', () => {
+      popupOverlay.style.display = 'none';
+    });
+
+    // Fechar o pop-up ao clicar fora da área do pop-up
+    popupOverlay.addEventListener('click', (e) => {
+      if (e.target === popupOverlay) {
+        popupOverlay.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>

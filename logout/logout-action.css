@@ -1,0 +1,116 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif; /* Fonte principal */
+}
+
+/* Fundo com efeito de espaço */
+body {
+  background: linear-gradient(135deg, #f9f0d8 0%, #d6c9a2 100%);
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  color: #4d4d4d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  position: relative;
+}
+
+.header .logo a {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #6a5acd;
+  text-decoration: none; /* Remove a barra embaixo */
+}
+
+.header .logo a:hover {
+  color: #5043a4; /* Cor do link ao passar o mouse */
+}
+
+/* Logout Action Section */
+.logout-action {
+  background: #f9f0d8;
+  border-radius: 15px;
+  padding: 40px 20px;
+  box-shadow: 0 10px 25px rgba(33, 37, 45, 0.15);
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.logout-action h1 {
+  font-size: 36px;
+  color: #6a5acd;
+  margin-bottom: 20px;
+}
+
+.logout-action p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Goodbye Message Box (Quadrado roxo com fundo branco dentro) */
+.goodbye-message {
+  background: white; /* Fundo branco dentro do quadrado */
+  color: #6a5acd; /* Texto roxo */
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(33, 37, 45, 0.3);
+  border: 3px solid #6a5acd; /* Adiciona borda roxa ao redor */
+}
+
+.goodbye-message p {
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  padding: 40px 20px;
+  color: #482757;
+  font-family: 'Nunito', sans-serif;
+  max-width: 1200px;
+  margin-top: 60px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(180, 154, 248, 0.3);
+  text-align: center;
+}
+
+footer p {
+  font-size: 1rem;
+  color: #444;
+}
+
+footer .copy {
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .logout-action {
+    width: 100%;
+    padding: 20px;
+  }
+}

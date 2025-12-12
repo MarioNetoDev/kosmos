@@ -1,0 +1,240 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif; /* Fonte principal */
+}
+
+/* Fundo com efeito de espaço */
+body {
+  background: linear-gradient(135deg, #f9f0d8 0%, #d6c9a2 100%);
+  color: #222;
+  min-height: 100vh;
+  font-size: 16px;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  color: #4d4d4d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  position: relative;
+}
+
+.header .logo a {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #6a5acd;
+  text-decoration: none; /* Remove a barra embaixo */
+}
+
+.header .logo a:hover {
+  color: #5043a4; /* Cor do link ao passar o mouse */
+}
+
+/* Hero Section (Banner Mantido) */
+/* Hero Section (Banner) */
+.hero {
+  height: 60vh;
+  background-image: url('..//about/imagesAbout/banner.jpg'); 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  color: white;
+  padding: 0 20px;
+  box-shadow: 0 8px 15px rgba(101, 87, 187, 0.3);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); 
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 70px;
+  margin-bottom: 15px;
+  text-shadow: 0 4px 10px rgba(33, 37, 45, 0.4);
+}
+
+.hero p {
+  font-size: 24px;
+  font-weight: 400;
+  color: #eee;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+/* Team Section */
+.team {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f9f0d8;
+  margin-bottom: 40px;
+}
+
+.team h2 {
+  font-size: 36px;
+  color: #6a5acd;
+  margin-bottom: 40px;
+}
+
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.team-member {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+.team-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 4px solid #6a5acd;
+}
+
+.team-member h3 {
+  font-size: 22px;
+  color: #6a5acd;
+  margin-bottom: 10px;
+}
+
+.team-member p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Content Section */
+.content {
+  margin: 0 auto 80px;
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+  padding: 40px 20px;
+  background: #f9f0d8;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(33, 37, 45, 0.15);
+}
+
+.content h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #7c7895;
+}
+
+.content p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  background-color: #6a5acd;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #5043a4;
+}
+
+/* Footer */
+.footer {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  padding: 40px 20px;
+  color: #482757;
+  font-family: 'Nunito', sans-serif;
+  max-width: 1200px;
+  margin: 80px auto 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(180, 154, 248, 0.3);
+  text-align: center;
+}
+
+.footer h2 {
+  color: #6a5acd;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.footer p {
+  font-size: 1rem;
+  color: #444;
+}
+
+.footer .copy {
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 45px;
+  }
+  .hero p {
+    font-size: 18px;
+  }
+  .content h2 {
+    font-size: 28px;
+  }
+  .content p {
+    font-size: 16px;
+  }
+
+  .team-members {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .content .content-image {
+    width: 100%;
+  }
+}
+

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Compra & Venda - Kosmos</title>
+  <link rel="stylesheet" href="marketplace.css" />
+</head>
+<body>
+  <a href="../register/register.html" class="register-btn" title="Registrar Nova Arte">
+    <img src="../register/pincel.webp" alt="Registrar Nova Arte" />
+  </a>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <a href="../main/main.html">Kosmos</a> 
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../main/main.html">Início</a></li>
+        <li><a href="../profile/profile.html">Perfil</a></li>
+        <li><a href="marketplace.html" class="active">Compra & Venda</a></li>
+        <li><a href="../logout/logout.html">Sair</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Pesquisa e filtro -->
+    <section class="search-filter">
+      <input type="text" placeholder="Pesquisar itens..." id="search-bar" class="search-bar">
+      <select id="filter-select" class="filter-select">
+        <option value="">Todas as categorias</option>
+        <option value="procura">À procura de</option>
+        <option value="aluguel">Aluguel</option>
+        <option value="venda">Venda</option>
+        <option value="servicos">Serviços pessoais</option>
+      </select>
+    </section>
+
+    <!-- Marketplace Items - À procura de -->
+    <section class="marketplace-section" data-category="procura">
+      <h2>À procura de</h2>
+      <div class="items-grid">
+        <article class="item-card">
+          <img src="../marketplace/imagesMarket/item1.jpg" alt="Item 1">
+          <h3>Até quanto posso pagar: R$ 150,00</h3>
+          <p>Descrição do que quero: Quadro moderno para decorar minha sala.</p>
+          <div class="seller">
+            <a href="#">
+              <img src="../marketplace/imagesMarket/user.webp" alt="Vendedor" class="seller-photo">
+            </a>
+            <span>Lucas Silva</span>
+          </div>
+          <a href="../pit/buy.html?title=Quadro%20Moderno&description=Quadro%20para%20decoração%20da%20sala&value=R$%20150,00&imgSrc=../marketplace/imagesMarket/item1.jpg&category=procura">
+            <button>Eu tenho isso!</button>
+          </a>
+        </article>
+        <article class="item-card">
+          <img src="../marketplace/imagesMarket/item2.jpg" alt="Item 2">
+          <h3>Até quanto posso pagar: R$ 250,00</h3>
+          <p>Descrição do que quero: Pintura abstrata para meu escritório.</p>
+          <div class="seller">
+            <a href="#">
+              <img src="../marketplace/imagesMarket/user.webp" alt="Vendedor" class="seller-photo">
+            </a>
+            <span>Ana Costa</span>
+          </div>
+          <a href="../pit/buy.html?title=Pintura%20Abstrata&description=Pintura%20moderna%20para%20escritório&value=R$%20250,00&imgSrc=../marketplace/imagesMarket/item2.jpg&category=procura">
+            <button>Eu tenho isso!</button>
+          </a>
+        </article>
+        <article class="item-card">
+          <img src="../marketplace/imagesMarket/item3.jpg" alt="Item 3">
+          <h3>Até quanto posso pagar: R$ 120,00</h3>
+          <p>Descrição do que quero: Ilustração para capa de livro infantil.</p>
+          <div class="seller">
+            <a href="#">
+              <img src="../marketplace/imagesMarket/user.webp" alt="Vendedor" class="seller-photo">
+            </a>
+            <span>Carlos Mendes</span>
+          </div>
+          <a href="../pit/buy.html?title=Ilustração%20Livro%20Infantil&description=Ilustração%20para%20livro%20infantil&value=R$%20120,00&imgSrc=../marketplace/imagesMarket/item3.jpg&category=procura">
+            <button>Eu tenho isso!</button>
+          </a>
+        </article>
+        <article class="item-card">
+          <img src="../marketplace/imagesMarket/item4.jpg" alt="Item 4">
+          <h3>Até quanto posso pagar: R$ 200,00</h3>
+          <p>Descrição do que quero: Escultura de resina para decoração.</p>
+          <div class="seller">
+            <a href="#">
+              <img src="../marketplace/imagesMarket/user.webp" alt="Vendedor" class="seller-photo">
+            </a>
+            <span>Júlia Rocha</span>
+          </div>
+          <a href="../pit/buy.html?title=Escultura%20de%20Resina&description=Escultura%20para%20decoração&value=R$%20200,00&imgSrc=../marketplace/imagesMarket/item4.jpg&category=procura">
+            <button>Eu tenho isso!</button>
+          </a>
+        </article>
+        <article class="item-card">
+          <img src="../marketplace/imagesMarket/item5.jpg" alt="Item 5">
+          <h3>Até quanto posso pagar: R$ 100,00</h3>
+          <p>Descrição do que quero: Aquarela para presente de aniversário.</p>
+          <div class="seller">
+            <a href="#">
+              <img src="../marketplace/imagesMarket/user.webp" alt="Vendedor" class="seller-photo">
+            </a>
+            <span>Roberto Lima</span>
+          </div>
+          <a href="../pit/buy.html?title=Aquarela%20Presente&description=Aquarela%20para%20aniversário&value=R$%20100,00&imgSrc=../marketplace/imagesMarket/item5.jpg&category=procura">
+            <button>Eu tenho isso!</button>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Marketplace Items - Aluguel -->
+    <section class="marketplace-section" data-category="aluguel">
+      <h2>Aluguel</h2>
+      <div class="items-grid">
+        <article class="item-card">
+          <img src="../marketplace/imagesMarket/item7.jpg" alt="Item 7">
+          <h3>Espaço para Workshop</h3>
+          <p>R$ 350/dia</p>
+          <div class="seller">
+            <a href="#">
+              <img src="../marketplace/imagesMarket/user.webp" alt="Vendedor" class="seller-photo">
+            </a>
+            <span>Marcos Silva</span>
+          </div>
+          <a href="../pit/buy.html?title=Espaço%20para%20Workshop&description=Espaço%20para%20realizar%20workshops&value=R$%20350,00&imgSrc=../marketplace/imagesMarket/item7.jpg&category=aluguel">
+            <button>Entrar em Contato</button>
+          </a>
+        </article>
+        <article class="item-card">
+          <img src="../marketplace/imagesMarket/item8.jpg" alt="Item 8">
+          <h3>Loft Criativo</h3>
+          <p>R$ 500/dia</p>
+          <div class="seller">
+            <a href="#">
+              <img src="../marketplace/imagesMarket/user.webp" alt="Vendedor" class="seller-photo">
+            </a>
+            <span>Renata Souza</span>
+          </div>
+          <a href="../pit/buy.html?title=Loft%20Criativo&description=Loft%20para%20trabalhos%20artísticos&value=R$%20500,00&imgSrc=../marketplace/imagesMarket/item8.jpg&category=aluguel">
+            <button>Entrar em Contato</button>
+          </a>
+        </article>
+        <article class="item-card">
+          <img src="../marketplace/imagesMarket/item9.jpg" alt="Item 9">
+          <h3>Ateliê Compacto</h3>
+          <p>R$ 300/dia</p>
+          <div class="seller">
+            <a href="#">
+              <img src="../marketplace/imagesMarket/user.webp" alt="Vendedor" class="seller-photo">
+            </a>
+            <span>Felipe Costa</span>
+          </div>
+          <a href="../pit/buy.html?title=Ateliê%20Compacto&description=Ateliê%20para%20artistas%20independentes&value=R$%20300,00&imgSrc=../marketplace/imagesMarket/item9.jpg&category=aluguel">
+            <button>Entrar em Contato</button>
+          </a>
+        </article>
+        <article class="item-card">
+          <img src="../marketplace/imagesMarket/item10.jpg" alt="Item 10">
+          <h3>Galeria Temporária</h3>
+          <p>R$ 450/dia</p>
+          <div class="seller">
+            <a href="#">
+              <img src="../marketplace/imagesMarket/user.webp" alt="Vendedor" class="seller-photo">
+            </a>
+            <span>Carla Ramos</span>
+          </div>
+          <a href="../pit/buy.html?title=Galeria%20Temporária&description=Espaço%20para%20exposição%20de%20arte&value=R$%20450,00&imgSrc=../marketplace/imagesMarket/item10.jpg&category=aluguel">
+            <button>Entrar em Contato</button>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Marketplace Items - Venda -->
+    <section class="marketplace-section" data-category="venda">
+      <h2>Venda</h2>
+      <div class="items-grid">
+        <article class="item-card">
+          <img src="../marketplace/imagesMarket/item11.jpg" alt="Item 11">
+          <h3>Pintura Acrílica</h3>
+          <p>R$ 150,00</p>
+          <div class="seller">
+            <a href="#">
+              <img src="../marketplace/imagesMarket/user.webp" alt="Vendedor" class="seller-photo">
+            </a>
+            <span>Júlia Rocha</span>
+          </div>
+          <a href="../pit/buy.html?title=Pintura%20Acrílica&description=Obra%20feita%20com%20técnica%20de%20acrílica&value=R$%20150,00&imgSrc=../marketplace/imagesMarket/item11.jpg&category=venda">
+            <button>Comprar</button>
+          </a>
+        </article>
+        <article class="item-card">
+          <img src="../marketplace/imagesMarket/item12.jpg" alt="Item 12">
+          <h3>Poster Minimalista</h3>
+          <p>R$ 60,00</p>
+          <div class="seller">
+            <a href="#">
+              <img src="../marketplace/imagesMarket/user.webp" alt="Vendedor" class="seller-photo">
+            </a>
+            <span>Rafael Lima</span>
+          </div>
+          <a href="../pit/buy.html?title=Poster%20Minimalista&description=Poster%20com%20design%20minimalista&value=R$%2060,00&imgSrc=../marketplace/imagesMarket/item12.jpg&category=venda">
+            <button>Comprar</button>
+          </a>
+        </article>
+        <article class="item-card">
+          <img src="../marketplace/imagesMarket/item13.jpg" alt="Item 13">
+          <h3>Escultura de Resina</h3>
+          <p>R$ 300,00</p>
+          <div class="seller">
+            <a href="#">
+              <img src="../marketplace/imagesMarket/user.webp" alt="Vendedor" class="seller-photo">
+            </a>
+            <span>Carolina Nunes</span>
+          </div>
+          <a href="../pit/buy.html?title=Escultura%20de%20Resina&description=Escultura%20para%20decoração&value=R$%20300,00&imgSrc=../marketplace/imagesMarket/item13.jpg&category=venda">
+            <button>Comprar</button>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Marketplace Items - Serviços -->
+    <section class="marketplace-section" data-category="servicos">
+      <h2>Serviços Pessoais</h2>
+      <div class="items-grid">
+        <article class="item-card">
+          <img src="../marketplace/imagesMarket/item16.jpg" alt="Item 16">
+          <h3>Animador de Festas</h3>
+          <p>R$ 300/h</p>
+          <div class="seller">
+            <a href="#">
+              <img src="../marketplace/imagesMarket/user.webp" alt="Vendedor" class="seller-photo">
+            </a>
+            <span>Roberto Lima</span>
+          </div>
+          <a href="../pit/buy.html?title=Animador%20de%20Festas&description=Serviço%20de%20animador%20para%20festas&value=R$%20300,00&imgSrc=../marketplace/imagesMarket/item16.jpg&category=servicos">
+            <button>Entrar em Contato</button>
+          </a>
+        </article>
+        <article class="item-card">
+          <img src="../marketplace/imagesMarket/item17.jpg" alt="Item 17">
+          <h3>DJ para Eventos</h3>
+          <p>R$ 350/h</p>
+          <div class="seller">
+            <a href="#">
+              <img src="../marketplace/imagesMarket/user.webp" alt="Vendedor" class="seller-photo">
+            </a>
+            <span>Marcos Paulo</span>
+          </div>
+          <a href="../pit/buy.html?title=DJ%20para%20Eventos&description=Serviço%20de%20DJ%20para%20eventos&value=R$%20350,00&imgSrc=../marketplace/imagesMarket/item17.jpg&category=servicos">
+            <button>Entrar em Contato</button>
+          </a>
+        </article>
+        <article class="item-card">
+          <img src="../marketplace/imagesMarket/item18.jpg" alt="Item 18">
+          <h3>Fotógrafo Profissional</h3>
+          <p>R$ 400/h</p>
+          <div class="seller">
+            <a href="#">
+              <img src="../marketplace/imagesMarket/user.webp" alt="Vendedor" class="seller-photo">
+            </a>
+            <span>Carla Mendes</span>
+          </div>
+          <a href="../pit/buy.html?title=Fotógrafo%20Profissional&description=Serviço%20de%20fotografia&value=R$%20400,00&imgSrc=../marketplace/imagesMarket/item18.jpg&category=servicos">
+            <button>Entrar em Contato</button>
+          </a>
+        </article>
+        <article class="item-card">
+          <img src="../marketplace/imagesMarket/item19.jpg" alt="Item 19">
+          <h3>Decorador de Eventos</h3>
+          <p>R$ 250/h</p>
+          <div class="seller">
+            <a href="#">
+              <img src="../marketplace/imagesMarket/user.webp" alt="Vendedor" class="seller-photo">
+            </a>
+            <span>Júlio Santos</span>
+          </div>
+          <a href="../pit/buy.html?title=Decorador%20de%20Eventos&description=Serviço%20de%20decoração%20para%20eventos&value=R$%20250,00&imgSrc=../marketplace/imagesMarket/item19.jpg&category=servicos">
+            <button>Entrar em Contato</button>
+          </a>
+        </article>
+        <article class="item-card">
+          <img src="../marketplace/imagesMarket/item20.jpg" alt="Item 20">
+          <h3>Professor de Pintura</h3>
+          <p>R$ 180/h</p>
+          <div class="seller">
+            <a href="#">
+              <img src="../marketplace/imagesMarket/user.webp" alt="Vendedor" class="seller-photo">
+            </a>
+            <span>Patrícia Lima</span>
+          </div>
+          <a href="../pit/buy.html?title=Professor%20de%20Pintura&description=Aula%20de%20pintura%20para%20iniciantes&value=R$%20180,00&imgSrc=../marketplace/imagesMarket/item20.jpg&category=servicos">
+            <button>Entrar em Contato</button>
+          </a>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Kosmos - Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="marketplace.js"></script>
+</body>
+</html>

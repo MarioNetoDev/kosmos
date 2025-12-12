@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Main - Área do Usuário</title>
+  <link rel="stylesheet" href="main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <a href="../register/register.html" class="register-btn" title="Registrar Nova Arte">
+  <img src="../register/pincel.webp" alt="Registrar Nova Arte" />
+</a>
+
+  <header class="header">
+    <div class="logo">
+      <a href="../main/main.html">Kosmos</a> 
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="main.html" class="active">Início</a></li>
+        <li><a href="../profile/profile.html">Perfil</a></li>
+        <li><a href="../marketplace/marketplace.html">Compra & Venda</a></li>
+        <li><a href="../logout/logout.html">Sair</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="profile-section">
+      <h2>Perfil</h2>
+      <div class="profile-card">
+      <a href="../profile/profile.html">
+        <img src="../main/mainImages/pfp.jpg" alt="Foto do usuário" class="profile-photo" />
+      </a>
+        <div class="profile-info">
+          <h3>Felipe Aligheri</h3>
+          <p>Artista digital e ilustrador.</p>
+          <h4>Portfólio</h4>
+          <div class="portfolio-thumbs">
+            <!-- Primeira imagem -->
+            <img src="../main/mainImages/portifolio1.jpeg" alt="Arte 1" class="portfolio-img"
+              data-title="Quadro Abstrato" 
+              data-description="Obra única feita à mão. Arte abstrata moderna." 
+              data-value="R$ 500,00" />
+            <!-- Segunda imagem -->
+            <img src="../main/mainImages/portifolio2.jpeg" alt="Arte 2" class="portfolio-img"
+              data-title="Escultura Moderna" 
+              data-description="Escultura decorativa de estilo moderno." 
+              data-value="R$ 1200,00" />
+            <!-- Terceira imagem -->
+            <img src="../main/mainImages/portifolio3.jpeg" alt="Arte 3" class="portfolio-img"
+              data-title="Pintura Acrílica" 
+              data-description="Pintura acrílica com cores vibrantes e expressivas." 
+              data-value="R$ 300,00" />
+          </div>
+          <button id="saiba-mais">Saiba mais sobre mim</button>
+        </div>
+      </div>
+    </section>
+
+ <section class="marketplace-section">
+  <h2>Compra e Venda</h2>
+  <div class="items-grid">
+    <!-- Quadro Abstrato -->
+    <article class="item-card">
+      <img src="../main/mainImages/quadro_abstrato.jpg" alt="Item 1" />
+      <h3>Quadro Abstrato</h3>
+      <p>Obra única feita à mão.</p>
+      <a href="../pit/buy.html?title=Quadro%20Abstrato&description=Obra%20única%20feita%20à%20mão.&value=R$%20500,00&imgSrc=../main/mainImages/quadro_abstrato.jpg">
+        <button>Comprar</button>
+      </a>
+    </article>
+
+    <!-- Escultura Moderna -->
+    <article class="item-card">
+      <img src="../main/mainImages/escultura.jpg" alt="Item 2" />
+      <h3>Escultura Moderna</h3>
+      <p>Peça decorativa elegante.</p>
+      <a href="../pit/buy.html?title=Escultura%20Moderna&description=Peça%20decorativa%20elegante.&value=R$%201200,00&imgSrc=../main/mainImages/escultura.jpg">
+        <button>Comprar</button>
+      </a>
+    </article>
+
+    <!-- Pintura Acrílica -->
+    <article class="item-card">
+      <img src="../main/mainImages/pintura_acrilica.jpg" alt="Item 3" />
+      <h3>Pintura Acrílica</h3>
+      <p>Técnica vibrante e colorida.</p>
+      <a href="../pit/buy.html?title=Pintura%20Acrílica&description=Técnica%20vibrante%20e%20colorida.&value=R$%20300,00&imgSrc=../main/mainImages/pintura_acrilica.jpg">
+        <button>Comprar</button>
+      </a>
+    </article>
+
+    <!-- Ilustração Digital -->
+    <article class="item-card">
+      <img src="../main/mainImages/ilustracao.jpeg" alt="Item 4" />
+      <h3>Ilustração Digital</h3>
+      <p>Arte para projetos gráficos.</p>
+      <a href="../pit/buy.html?title=Ilustração%20Digital&description=Arte%20para%20projetos%20gráficos.&value=R$%20400,00&imgSrc=../main/mainImages/ilustracao.jpeg">
+        <button>Comprar</button>
+      </a>
+    </article>
+
+    <!-- Aluguel de Estúdio de Arte -->
+    <article class="item-card">
+      <img src="../main/mainImages/estudio.jpg" alt="Estúdio de Arte" />
+      <h3>Aluguel de Estúdio de Arte</h3>
+      <p>R$ 500/dia</p>
+      <a href="../pit/buy.html?title=Aluguel%20de%20Estúdio%20de%20Arte&description=Aluguel%20de%20estúdio%20para%20artistas&value=R$%20500,00&imgSrc=../main/mainImages/estudio.jpg">
+        <button>Alugar</button>
+      </a>
+    </article>
+
+    <!-- Espaço para Workshop -->
+    <article class="item-card">
+      <img src="../main/mainImages/workshop.jpg" alt="Workshop de Arte" />
+      <h3>Espaço para Workshop</h3>
+      <p>R$ 350/dia</p>
+      <a href="../pit/buy.html?title=Espaço%20para%20Workshop&description=Espaço%20disponível%20para%20workshops&value=R$%20350,00&imgSrc=../main/mainImages/workshop.jpg">
+        <button>Alugar</button>
+      </a>
+    </article>
+
+    <!-- Serviço de Pintura Profissional -->
+    <article class="item-card">
+      <img src="../main/mainImages/pintura.jpg" alt="Pintor Profissional" />
+      <h3>Serviço de Pintura Profissional</h3>
+      <p>R$ 350/hora</p>
+      <a href="../pit/buy.html?title=Serviço%20de%20Pintura%20Profissional&description=Serviço%20de%20pintura%20profissional&value=R$%20350,00&imgSrc=../main/mainImages/pintura.jpg">
+        <button>Contratar</button>
+      </a>
+    </article>
+
+    <!-- Serviço de Design Gráfico -->
+    <article class="item-card">
+      <img src="../main/mainImages/design.jpg" alt="Designer Gráfico" />
+      <h3>Serviço de Design Gráfico</h3>
+      <p>R$ 250/hora</p>
+      <a href="../pit/buy.html?title=Serviço%20de%20Design%20Gráfico&description=Serviço%20de%20design%20gráfico&value=R$%20250,00&imgSrc=../main/mainImages/design.jpg">
+        <button>Contratar</button>
+      </a>
+    </article>
+
+    <!-- Serviço de Fotografia Profissional -->
+    <article class="item-card">
+      <img src="../main/mainImages/fotografia.jpg" alt="Fotógrafo Profissional" />
+      <h3>Serviço de Fotografia Profissional</h3>
+      <p>R$ 400/hora</p>
+      <a href="../pit/buy.html?title=Serviço%20de%20Fotografia%20Profissional&description=Serviço%20de%20fotografia%20profissional&value=R$%20400,00&imgSrc=../main/mainImages/fotografia.jpg">
+        <button>Contratar</button>
+      </a>
+    </article>
+
+    <!-- Serviço de Decoração para Eventos -->
+    <article class="item-card">
+      <img src="../main/mainImages/decoracao.jpg" alt="Decorador de Eventos" />
+      <h3>Serviço de Decoração para Eventos</h3>
+      <p>R$ 500/hora</p>
+      <a href="../pit/buy.html?title=Serviço%20de%20Decoração%20para%20Eventos&description=Serviço%20de%20decoração%20para%20eventos&value=R$%20500,00&imgSrc=../main/mainImages/decoracao.jpg">
+        <button>Contratar</button>
+      </a>
+    </article>
+
+    <!-- Novo item de Aluguel de Microfone -->
+    <article class="item-card">
+      <img src="../main/mainImages/mic.jpg" alt="Aluguel de Microfone" />
+      <h3>Aluguel de Microfone</h3>
+      <p>R$ 50/dia</p>
+      <a href="../pit/buy.html?title=Aluguel%20de%20Microfone&description=Aluguel%20de%20microfone%20para%20eventos&value=R$%2050,00&imgSrc=../main/mainImages/mic.jpg">
+        <button>Alugar</button>
+      </a>
+    </article>
+
+    <!-- Novo item de Venda de Ukulele -->
+    <article class="item-card">
+      <img src="../main/mainImages/ukulele.jpg" alt="Ukulele à Venda" />
+      <h3>Ukulele</h3>
+      <p>R$ 400,00</p>
+      <a href="../pit/buy.html?title=Ukulele&description=Ukulele%20à%20venda&value=R$%20400,00&imgSrc=../main/mainImages/ukulele.jpg">
+        <button>Comprar</button>
+      </a>
+    </article>
+  </div>
+</section>
+
+
+  </main>
+
+  <!-- Pop-up de Imagem -->
+  <div id="popup" class="popup-overlay">
+    <div class="popup-content">
+      <span class="close-btn">&times;</span>
+      <div class="popup-image-container">
+        <img id="popup-img" src="" alt="Imagem do portfólio" />
+        <div class="popup-text">
+          <h3 id="popup-title"></h3>
+          <p id="popup-description"></p>
+          <p><strong>Valor:</strong> <span id="popup-value"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pop-up Saiba Mais -->
+  <div id="saiba-mais-popup" class="popup-overlay">
+    <div class="popup-content">
+      <span class="close-btn">&times;</span>
+      <h2>Sobre Mim</h2>
+      <p><strong>Nome:</strong> Felipe Aligheri</p>
+      <p><strong>Idade:</strong> 28 anos</p>
+      <p><strong>Pronomes:</strong> Ele/Dele</p>
+      <p><strong>Especialidades:</strong> Arte Digital, Ilustração, Pintura Acrílica</p>
+      <div class="work-sections">
+        <div>
+          <h4>O que eu faço:</h4>
+          <ul>
+            <li>Ilustração digital</li>
+            <li>Design gráfico</li>
+            <li>Pintura em acrílico</li>
+          </ul>
+        </div>
+        <div>
+          <h4>O que não faço:</h4>
+          <ul>
+            <li>Fotografia</li>
+            <li>Modelagem 3D</li>
+            <li>Escultura em barro</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 Kosmos - Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Abrir pop-up 'Saiba Mais'
+    $('#saiba-mais').click(function() {
+      $('#saiba-mais-popup').fadeIn();
+    });
+
+    // Abrir pop-up de Imagem com dados dinâmicos
+    $('.portfolio-img').click(function() {
+      const imgSrc = $(this).attr('src');
+      const title = $(this).data('title');
+      const description = $(this).data('description');
+      const value = $(this).data('value');
+
+      // Atualizando o conteúdo do pop-up com os dados da imagem
+      $('#popup-img').attr('src', imgSrc);
+      $('#popup-title').text(title);
+      $('#popup-description').text(description);
+      $('#popup-value').text(value);
+
+      $('#popup').fadeIn();
+    });
+
+    // Fechar o pop-up quando clicar fora da área do pop-up
+    $(document).click(function(event) {
+      if ($(event.target).is('#saiba-mais-popup')) {
+        $('#saiba-mais-popup').fadeOut();
+      }
+
+      if ($(event.target).is('#popup')) {
+        $('#popup').fadeOut();
+      }
+    });
+
+    // Fechar pop-up 'Saiba Mais' e 'Imagem' quando clicar no botão de fechar
+    $('.close-btn').click(function() {
+      $('#saiba-mais-popup').fadeOut();
+      $('#popup').fadeOut();
+    });
+  </script>
+
+</body>
+</html>

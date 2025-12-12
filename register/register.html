@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar Novo Item</title>
+  <link rel="stylesheet" href="register.css">
+</head>
+<body>
+      <header class="header">
+    <div class="logo">
+      <a href="../main/main.html">Kosmos</a> 
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../main/main.html">Início</a></li>
+        <li><a href="profile.html">Perfil</a></li>
+        <li><a href="../marketplace/marketplace.html">Compra & Venda</a></li>
+        <li><a href="../logout/logout.html">Sair</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Formulário de Registro de Arte -->
+  <main class="container">
+    <h2>Registrar Novo Item</h2>
+    <form id="registerForm" action="submit_register.php" method="POST" enctype="multipart/form-data">
+
+      <!-- Título da Arte -->
+      <label for="title">Título da Arte:</label>
+      <input type="text" id="title" name="title" required>
+
+      <!-- Descrição -->
+      <label for="description">Descrição:</label>
+      <textarea id="description" name="description" required></textarea>
+
+      <!-- Preço -->
+      <label for="price">Preço:</label>
+      <input type="text" id="price" name="price" required>
+
+      <!-- Imagem -->
+      <label for="image">Imagem da Arte:</label>
+      <input type="file" id="image" name="image" accept="image/*" required>
+
+      <!-- Localização -->
+      <label for="location">Localização (Cidade/Estado):</label>
+      <input type="text" id="location" name="location" required>
+
+      <!-- Hashtags -->
+      <label for="hashtags">Hashtags (separadas por vírgula):</label>
+      <input type="text" id="hashtags" name="hashtags" placeholder="#arte, #venda, #ilustração">
+
+      <!-- Tipo de Serviço -->
+      <label for="serviceType">Tipo de Serviço:</label>
+      <select id="serviceType" name="serviceType" required>
+        <option value="">Escolha um tipo</option>
+        <option value="procurando">Estou à procura de</option>
+        <option value="alugar">Alugar</option>
+        <option value="venda">Venda</option>
+        <option value="servicos">Serviços pessoais</option>
+      </select>
+
+      <!-- Perguntas Dinâmicas -->
+      <div id="dynamicQuestions"></div>
+
+      <button type="submit">Registrar</button>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Kosmos - Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Script para Mostrar Perguntas Dinâmicas -->
+  <script>
+    const serviceTypeSelect = document.getElementById("serviceType");
+    const dynamicQuestionsContainer = document.getElementById("dynamicQuestions");
+
+    serviceTypeSelect.addEventListener("change", function() {
+      // Limpar qualquer conteúdo anterior
+      dynamicQuestionsContainer.innerHTML = "";
+
+      // Perguntas específicas para cada tipo de serviço
+      if (serviceTypeSelect.value === "procurando") {
+        dynamicQuestionsContainer.innerHTML = `
+          <label for="searchFor">O que você está procurando?</label>
+          <input type="text" id="searchFor" name="searchFor" required>
+          <label for="urgency">Qual a urgência para a sua procura?</label>
+          <input type="text" id="urgency" name="urgency" required>
+        `;
+      } else if (serviceTypeSelect.value === "alugar") {
+        dynamicQuestionsContainer.innerHTML = `
+          <label for="rentalDuration">Qual a duração do aluguel?</label>
+          <input type="text" id="rentalDuration" name="rentalDuration" required>
+          <label for="rentalTerms">Quais são os termos do aluguel?</label>
+          <textarea id="rentalTerms" name="rentalTerms" required></textarea>
+        `;
+      } else if (serviceTypeSelect.value === "venda") {
+        dynamicQuestionsContainer.innerHTML = `
+          <label for="deliveryOptions">Quais são as opções de entrega?</label>
+          <input type="text" id="deliveryOptions" name="deliveryOptions" required>
+          <label for="guarantee">Você oferece garantia para o produto?</label>
+          <textarea id="guarantee" name="guarantee" required></textarea>
+        `;
+      } else if (serviceTypeSelect.value === "servicos") {
+        dynamicQuestionsContainer.innerHTML = `
+          <label for="serviceDetails">Detalhes sobre o serviço</label>
+          <textarea id="serviceDetails" name="serviceDetails" required></textarea>
+          <label for="availability">Qual é a sua disponibilidade?</label>
+          <input type="text" id="availability" name="availability" required>
+        `;
+      }
+    });
+  </script>
+
+</body>
+</html>
