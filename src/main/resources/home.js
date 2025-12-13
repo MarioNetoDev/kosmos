@@ -14,7 +14,7 @@ btnLogin.addEventListener("click", () => {
     const senha = loginSenha.value;
 
     if (email === "usuario@kosmos.com" && senha === "senha123") {
-        window.location.href = "../main/main.html";
+        window.location.href = "main/main.html";
     } else {
         alert("Credenciais inválidas. Tente novamente.");
     }
