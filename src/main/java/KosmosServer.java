@@ -35,58 +35,101 @@ public class KosmosServer {
 
     private void handleClient(Socket client) {
         try {
-            BufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(client.getInputStream())
+            );
             OutputStream out = client.getOutputStream();
 
             String requestLine = in.readLine();
-            System.out.print("Requisição Recebida " + requestLine + "\n");
+            System.out.println("REQ → " + requestLine);
 
-            if (requestLine == null) return;
+            if (requestLine == null) {
+                client.close();
+                return;
+            }
 
-            if (requestLine.startsWith("GET")) {
-                send(out, requestLine.split(" ")[1]);
+            if (requestLine.startsWith("GET /api/products")) {
+                ProductRoute.handleGetProducts(out, requestLine);
+
             } else if (requestLine.startsWith("POST /api/login")) {
                 LoginRoute.handleLogin(in, out);
-            } else {
+
+            } else if (requestLine.startsWith("POST /api/trade")) {
+                TradeRoute.handleTrade(in, out);
+
+            } else if (requestLine.startsWith("POST /api/comment")) {
+                CommentRoute.handleComment(in, out);
+
+            } else if (requestLine.startsWith("POST /api/rating")) {
+                RatingRoute.handleRating(in, out);
+
+            } else if (requestLine.startsWith("GET ")) {
+                String fullPath = requestLine.split(" ")[1];
+
+                String path = fullPath.split("\\?")[0];
+
+                send(out, path);
+            }
+            else {
                 sendNotFound(out);
             }
+
             client.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+
+
     private void send(OutputStream out, String request) throws IOException {
-        if (Objects.equals(request, "/")) {
+
+        if (request.contains("?")) {
+            request = request.substring(0, request.indexOf("?"));
+        }
+
+        if (request.equals("/")) {
             request = "index.html";
         }
 
-        Path filePath = Paths.get(String.valueOf(this.resourcePath), request);
+
+        if (request.startsWith("/")) {
+            request = request.substring(1);
+        }
+
+        Path filePath = Paths.get(resourcePath.toString(), request);
         String mimeType = getContentType(request);
 
+        System.out.println("ARQUIVO BUSCADO → " + filePath.toAbsolutePath());
+
         if (Files.exists(filePath)) {
-            byte[] htmlBytes = Files.readAllBytes(filePath);
+            byte[] fileBytes = Files.readAllBytes(filePath);
 
             String headers = "HTTP/1.1 200 OK\r\n"
                     + "Content-Type: " + mimeType + "\r\n"
-                    + "Content-Length: " + htmlBytes.length + "\r\n"
+                    + "Content-Length: " + fileBytes.length + "\r\n"
                     + "\r\n";
 
             out.write(headers.getBytes(StandardCharsets.UTF_8));
-            out.write(htmlBytes);
+            out.write(fileBytes);
         } else {
-            System.err.println("Arquivo HTML não encontrado: " + filePath.toAbsolutePath());
+            System.out.println(" NÃO ENCONTRADO");
             sendNotFound(out);
         }
     }
 
+
+
     private void sendNotFound(OutputStream out) throws IOException {
         String response = "HTTP/1.1 404 Not Found\r\n"
-                + "Conntent-Type: text/plain\r\n"
-                + "Content-Length: 9\r\n\r\n"
+                + "Content-Type: text/plain; charset=utf-8\r\n"
+                + "Content-Length: 9\r\n"
+                + "\r\n"
                 + "Not Found";
-        out.write(response.getBytes());
+        out.write(response.getBytes(StandardCharsets.UTF_8));
     }
+
 
     public String getContentType(String filePath) {
         String[] filePathArray = filePath.split("\\.");

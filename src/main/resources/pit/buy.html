@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Comprar - Área do Usuário</title>
-  <link rel="stylesheet" href="buy.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Comprar - Área do Usuário</title>
+    <link rel="stylesheet" href="buy.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-  <a href="../register/register.html" class="register-btn" title="Registrar Nova Arte">
-  <img src="../register/pincel.webp" alt="Registrar Nova Arte" />
+<a href="../register/register.html" class="register-btn" title="Registrar Nova Arte">
+    <img src="../register/pincel.webp" alt="Registrar Nova Arte" />
 </a>
-  <header class="header">
+<header class="header">
     <div class="logo">
-      <a href="../main/main.html">Kosmos</a> 
+        <a href="../main/main.html">Kosmos</a>
     </div>
     <nav>
-      <ul class="nav-links">
-        <li><a href="../main/main.html">Início</a></li>
-        <li><a href="../profile/profile.html">Perfil</a></li>
-        <li><a href="../marketplace/marketplace.html">Compra & Venda</a></li>
-        <li><a href="../logout/logout.html">Sair</a></li>
-      </ul>
+        <ul class="nav-links">
+            <li><a href="../main/main.html">Início</a></li>
+            <li><a href="../profile/profile.html">Perfil</a></li>
+            <li><a href="../marketplace/marketplace.html">Compra & Venda</a></li>
+            <li><a href="../logout/logout.html">Sair</a></li>
+        </ul>
     </nav>
-  </header>
+</header>
 
-  <main class="container">
+<main class="container">
     <section class="buy-section">
-      <h2>Detalhes da Compra</h2>
-      <div class="buy-card">
-        <img id="buy-img" src="" alt="Imagem da obra" class="buy-img" />
-        <div class="buy-info">
-          <h3 id="buy-title">Título da Obra</h3>
-          <p id="buy-description">Descrição da obra</p>
-          <p><strong>Valor:</strong> <span id="buy-value">R$ 0,00</span></p>
-          <button id="finalizar-compra" class="buy-button">Finalizar Compra</button>
+        <h2>Detalhes da Compra</h2>
+        <div class="buy-card">
+            <img id="buy-img" src="" alt="Imagem da obra" class="buy-img" />
+            <div class="buy-info">
+                <h3 id="buy-title">Título da Obra</h3>
+                <p id="buy-description">Descrição da obra</p>
+                <p><strong>Valor:</strong> <span id="buy-value">R$ 0,00</span></p>
+                <button id="finalizar-compra" class="buy-button">Finalizar Compra</button>
+            </div>
         </div>
-      </div>
     </section>
-  </main>
+</main>
 
-  <footer class="footer">
+<footer class="footer">
     <p>© 2025 Kosmos - Todos os direitos reservados.</p>
-  </footer>
+</footer>
 
-  <script>
+<script>
     // Obtendo os dados da obra a partir da URL (usando query string)
     const urlParams = new URLSearchParams(window.location.search);
     const title = urlParams.get('title');
@@ -61,10 +61,10 @@
 
     // Redirecionar para a página de pagamento quando clicar no botão "Finalizar Compra"
     $('#finalizar-compra').click(function() {
-      alert("Compra finalizada com sucesso! Você será redirecionado para o pagamento.");
-      window.location.href = "payment.html"; // Redireciona para a página de pagamento (payment.html)
+        alert("Compra finalizada com sucesso! Você será redirecionado para o pagamento.");
+        window.location.href = "payment.html"; // Redireciona para a página de pagamento (payment.html)
     });
-  </script>
+</script>
 
 </body>
 </html>

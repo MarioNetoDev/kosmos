@@ -9,14 +9,12 @@ public class LoginRoute {
         String line;
         int contentLength = 0;
 
-        // Lê headers
         while (!(line = in.readLine()).isEmpty()) {
             if (line.startsWith("Content-Length:")) {
                 contentLength = Integer.parseInt(line.split(":")[1].trim());
             }
         }
 
-        // Lê corpo
         char[] body = new char[contentLength];
         in.read(body);
 
