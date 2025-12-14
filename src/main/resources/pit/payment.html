@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pagamento - Kosmos</title>
+  <link rel="stylesheet" href="payment.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="../main/main.html">Kosmos</a> 
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../main/main.html">Início</a></li>
+        <li><a href="../profile/profile.html">Perfil</a></li>
+        <li><a href="../marketplace/marketplace.html">Compra & Venda</a></li>
+        <li><a href="../logout/logout.html">Sair</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="payment-section">
+      <h2>Compra realizada com sucesso!</h2>
+      <p id="success-msg">Obrigado por adquirir a obra "<span id="obra-title"></span>".</p>
+      <p>Você pode gerar seu boleto clicando no botão abaixo:</p>
+      <button id="gerar-boleto" class="payment-button">Gerar Boleto</button>
+
+      <div id="boleto" class="boleto" style="display:none;">
+        <h3>Boleto Bancário</h3>
+        <p><strong>Beneficiário:</strong> Kosmos Arte</p>
+        <p><strong>Obra:</strong> <span id="boleto-title"></span></p>
+        <p><strong>Valor:</strong> <span id="boleto-valor"></span></p>
+        <p><strong>Vencimento:</strong> 20/12/2025</p>
+        <p><strong>Linha digitável:</strong> 00190.00009 01234.567890 12345.678901 1 23456789012345</p>
+
+        <button id="baixar-pdf" class="payment-button" style="margin-top: 20px;">Baixar Boleto em PDF</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Kosmos - Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Pegar os dados da obra via URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const title = urlParams.get('title');
+    const value = urlParams.get('value');
+
+    // Atualiza o texto na página
+    $('#obra-title').text(title);
+    $('#boleto-title').text(title);
+    $('#boleto-valor').text(value);
+
+    // Geração do boleto
+    $('#gerar-boleto').click(function() {
+      $('#boleto').slideDown();
+      $(this).text('Boleto Gerado!');
+      $(this).prop('disabled', true);
+    });
+
+    // Baixar boleto em PDF estilizado
+    $('#baixar-pdf').click(function() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({ unit: 'pt', format: 'a4' });
+
+      // Cores
+      const primaryColor = '#6a5acd';
+      const bgColor = '#f9f0d8';
+      const textColor = '#222';
+
+      // Fundo do boleto
+      doc.setFillColor(bgColor);
+      doc.roundedRect(40, 50, 520, 250, 10, 10, 'F');
+
+      // Título
+      doc.setFontSize(22);
+      doc.setTextColor(primaryColor);
+      doc.setFont('helvetica', 'bold');
+      doc.text('Boleto Bancário', 50, 90);
+
+      // Beneficiário
+      doc.setFontSize(12);
+      doc.setTextColor(textColor);
+      doc.setFont('helvetica', 'normal');
+      doc.text(`Beneficiário: Kosmos Arte`, 50, 120);
+
+      // Obra
+      doc.text(`Obra: ${title}`, 50, 140);
+
+      // Valor
+      doc.text(`Valor: ${value}`, 50, 160);
+
+      // Vencimento
+      doc.text(`Vencimento: 20/12/2025`, 50, 180);
+
+      // Linha digitável
+      doc.text(`Linha digitável: 00190.00009 01234.567890 12345.678901 1 23456789012345`, 50, 200);
+
+      // Instruções
+      doc.setFontSize(10);
+      doc.setTextColor('#555');
+      doc.text('Leve este boleto até o banco ou use o código de barras para pagamento online.', 50, 230);
+
+      // Caixa do código de barras (simulado)
+      doc.setFillColor('#ccc');
+      doc.rect(50, 250, 400, 40, 'F');
+      doc.setTextColor('#000');
+      doc.text('||||||||||||||||||||||||||||||||||||||||||||||||||||||', 55, 275);
+
+      // Salvar PDF
+      doc.save(`boleto_${title}.pdf`);
+    });
+  </script>
+</body>
+</html>

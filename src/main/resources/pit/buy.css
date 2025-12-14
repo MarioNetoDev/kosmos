@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +6,6 @@
   user-select: none;
 }
 
-/* Body */
 body {
   background: linear-gradient(135deg, #f9f0d8 0%, #d6c9a2 100%);
   color: #222;
@@ -16,7 +14,6 @@ body {
   flex-direction: column;
 }
 
-/* Header */
 .header {
   display: flex;
   justify-content: space-between;
@@ -61,16 +58,15 @@ body {
 .header .logo a {
   font-size: 1.8rem;
   font-weight: bold;
-  text-decoration: none; /* Remove a barra embaixo do link */
-  color: #5043a4; /* Cor do texto */
-  transition: color 0.3s ease; /* Efeito suave para a mudança de cor */
+  text-decoration: none;
+  color: #5043a4;
+  transition: color 0.3s ease; 
 }
 
 .header .logo a:hover {
-  color: #ffffff; /* Cor ao passar o mouse */
+  color: #ffffff;
 }
 
-/* Container principal */
 .container {
   flex-grow: 1;
   max-width: 1200px;
@@ -78,7 +74,6 @@ body {
   padding: 0 20px;
 }
 
-/* Buy Section */
 .buy-section h2 {
   font-size: 2.2rem;
   color: #6a5acd;
@@ -136,7 +131,6 @@ body {
   background-color: #5043a4;
 }
 
-/* Footer */
 .footer {
   background-color: #222;
   color: #eee;
@@ -146,7 +140,6 @@ body {
   font-size: 14px;
 }
 
-/* Estilo para o ícone de pincel */
 .register-btn {
   position: fixed;
   bottom: 20px;
@@ -175,10 +168,9 @@ body {
   outline: none;
 }
 
-/* Estilo para o formulário de contato */
 .contact-form {
   margin-top: 20px;
-  display: none; /* Inicialmente escondido */
+  display: none;
 }
 
 .contact-form label {
